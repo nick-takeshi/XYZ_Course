@@ -15,7 +15,13 @@ public class ChangeHPComponent : MonoBehaviour
 
         if (healthComponent != null)
         {
-            healthComponent.ApplyDamage(_damage);
+            if (target.CompareTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value -= _damage;
+                healthComponent.ApplyDamage(_damage);
+            }
+            else healthComponent.ApplyDamage(_damage);
+
         }
        
     }
@@ -27,7 +33,12 @@ public class ChangeHPComponent : MonoBehaviour
 
         if (healthComponent != null)
         {
-            healthComponent.HealHP(_healing);
+            if (target.CompareTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += _healing;
+                healthComponent.HealHP(_healing);
+            }
+            else healthComponent.HealHP(_healing);
         }
     }
 }

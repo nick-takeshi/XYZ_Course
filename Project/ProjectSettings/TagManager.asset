@@ -8,6 +8,7 @@ TagManager:
   - helm
   - enemy
   - door
+  - SfxAudioSource
   layers:
   - Default
   - TransparentFX

@@ -6,11 +6,9 @@ using UnityEngine;
 public class DefsFacade : ScriptableObject
 {
     [SerializeField] private InventoryItemsDefinition _items;
-
+    [SerializeField] private PlayerDef _player;
     public InventoryItemsDefinition Items => _items;
-    
-        
-    
+    public PlayerDef Player => _player;
 
     private static DefsFacade _instance;
     public static DefsFacade I => _instance == null ? LoadDefs() : _instance;

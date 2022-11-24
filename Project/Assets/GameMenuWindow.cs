@@ -11,7 +11,10 @@ public class GameMenuWindow : AnimatedWindow
     public void Awake()
     {
         menu = GameObject.Find("menu");
-        menu.SetActive(false);
+        if (menu != null)
+        {
+            menu.SetActive(false);
+        }
     }
     public void OnShowSettings()
     {

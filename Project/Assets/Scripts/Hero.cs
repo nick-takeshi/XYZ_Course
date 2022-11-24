@@ -154,6 +154,10 @@ public class Hero : Creature
         Debug.Log(_animator.runtimeAnimatorController);
     }
 
+    public void OnHealthChanged(int currentHealth)
+    {
+        _session.Data.Hp.Value = currentHealth;
+    }
     public void OnDoThrow()
     {
         _particles.Spawn("Throw");
@@ -186,7 +190,7 @@ public class Hero : Creature
             if (healthComponent != null)
             {
                 healthComponent.HealHP(5);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data._health += 5;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += 5;
                 _sounds.Play("Heal");
             }
         }

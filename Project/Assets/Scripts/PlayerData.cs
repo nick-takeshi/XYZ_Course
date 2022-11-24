@@ -7,10 +7,10 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] private InventoryData _inventory;
-
-    public int _health = 5;
-
     public InventoryData Inventory => _inventory;
+
+    public IntProperty Hp = new IntProperty();
+
     public PlayerData Clone()
     {
         var json = JsonUtility.ToJson(this);

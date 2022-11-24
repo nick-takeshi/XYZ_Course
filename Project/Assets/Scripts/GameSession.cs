@@ -1,18 +1,22 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
     [SerializeField] private PlayerData _data;
     public PlayerData Data => _data;
 
+    private PlayerData _save;
 
     private void Awake()
     {
+        LoadHUD();
+
         if (IsSessionExit())
         {
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
 
         }
         else
@@ -20,6 +24,11 @@ public class GameSession : MonoBehaviour
           
             DontDestroyOnLoad(this);
         }
+    }
+
+    private void LoadHUD()
+    {
+        SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
     }
 
     private bool IsSessionExit()
@@ -35,7 +44,15 @@ public class GameSession : MonoBehaviour
         }
         return false;
     }
+    public void Save()
+    {
+        _save = _data.Clone();
+    }
 
+    public void LoadLastSave()
+    {
+        _data = _save.Clone();
+    }
 
 }
 

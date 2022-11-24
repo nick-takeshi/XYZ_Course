@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RealSecond.unity
     guid: f9c11a8970c7fbe4aaacc7bfc2335a9d
+  - enabled: 1
+    path: Assets/Scenes/HUD.unity
+    guid: 0c7616b8e7c0e4f4283e74894fb52cb7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3d483e4a874e9754394a21c3e0452450, type: 2}

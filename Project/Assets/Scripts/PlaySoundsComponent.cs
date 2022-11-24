@@ -12,9 +12,14 @@ public class PlaySoundsComponent : MonoBehaviour
         foreach (var audioData in _sounds)
         {
             if (audioData.ID != id) continue;
+
+            if (_source == null)
+            {
+                _source = GameObject.FindWithTag("SFXAudioSource").GetComponent<AudioSource>();
+            }
+
             _source.PlayOneShot(audioData.Clip);
             break;
-            
         }
     }
 

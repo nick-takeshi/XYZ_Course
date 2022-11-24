@@ -6,7 +6,7 @@ public class AnimatedWindow : MonoBehaviour
 {
     private Animator _animator;
 
-    private void Start()
+    protected virtual void Start()
     {
         _animator = GetComponent<Animator>();
 

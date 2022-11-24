@@ -8,7 +8,7 @@ public class LoadSecondLevel : MonoBehaviour
     [SerializeField] private float _delay;
     public void LoadSecondLvl()
     {
-        SceneManager.LoadScene("SecondLvl");
+        SceneManager.LoadScene(2);
     }
 
     public void LoadInSomeSec()

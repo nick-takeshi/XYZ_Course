@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 8350499603852226338}
   - component: {fileID: 8350499603852226337}
   - component: {fileID: 8350499603852226339}
+  - component: {fileID: 1023799346}
   m_Layer: 5
   m_Name: start
   m_TagString: Untagged
@@ -217,6 +218,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 8350499605145795202}
   _select: {fileID: 8350499604837158061}
+--- !u!114 &1023799346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350499603852226342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a76ac82c75cd764e86fbadb33b12a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 211d17c76f5bf7540a4b30a72f7bc313, type: 3}
 --- !u!1 &8350499604215858581
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +951,7 @@ GameObject:
   - component: {fileID: 8350499605397431423}
   - component: {fileID: 8350499605397431422}
   - component: {fileID: 8350499605397431416}
+  - component: {fileID: 942535343}
   m_Layer: 5
   m_Name: exit
   m_TagString: Untagged
@@ -1062,6 +1077,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 8350499604414195959}
   _select: {fileID: 8350499603448084916}
+--- !u!114 &942535343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350499605397431395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a76ac82c75cd764e86fbadb33b12a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 211d17c76f5bf7540a4b30a72f7bc313, type: 3}
 --- !u!1 &8350499605565260158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1102,7 @@ GameObject:
   - component: {fileID: 8350499605565260154}
   - component: {fileID: 8350499605565260153}
   - component: {fileID: 8350499605565260155}
+  - component: {fileID: 201364086}
   m_Layer: 5
   m_Name: options
   m_TagString: Untagged
@@ -1199,3 +1228,16 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 8350499604758616331}
   _select: {fileID: 8350499605038051758}
+--- !u!114 &201364086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350499605565260158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a76ac82c75cd764e86fbadb33b12a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 211d17c76f5bf7540a4b30a72f7bc313, type: 3}

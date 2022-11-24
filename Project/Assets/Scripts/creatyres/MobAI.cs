@@ -141,8 +141,6 @@ public class MobAI : MonoBehaviour
 
         var rigid = GetComponent<Rigidbody2D>();
 
-        var trig = FindObjectOfType<EnterTrigger>();
-        Destroy(trig);
 
         gameObject.layer = 7;
 
