@@ -32,5 +32,10 @@ public class SpawnComponent : MonoBehaviour
         instantiate.transform.position = _target.transform.position;
     }
 
+    public void SetPrefab(GameObject prefab)
+    {
+        _prefab = prefab;
+    }
+
     
 }

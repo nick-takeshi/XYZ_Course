@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class InnventoryItemVidget : MonoBehaviour
+{
+    [SerializeField] private Image _icon;
+    [SerializeField] private GameObject _selection;
+    [SerializeField] private Text _value;
+
+    private int _index;
+
+    private void Start()
+    {
+        var session = FindObjectOfType<GameSession>();
+        session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+    }
+
+    private void OnIndexChanged(int newValue, int oldValue)
+    {
+        _selection.SetActive(_index == newValue);
+    }
+    public void SetData(InventoryItemData item, int index)
+    {
+        _index = index;
+        var def = DefsFacade.I.Items.Get(item.Id);
+        _icon.sprite = def.Icon;
+        _value.text = def.HasTag(ItemTag.Stackable) ? item.Value.ToString() : string.Empty;
+
+    }
+
+}

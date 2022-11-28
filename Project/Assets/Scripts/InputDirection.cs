@@ -57,6 +57,22 @@ public class InputDirection : MonoBehaviour
 
 
     }
+
+    public void OnNextItem(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.NextItem();
+        }
+    }
+
+    public void OnFast(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.GetFast();
+        }
+    }
 }
    
     

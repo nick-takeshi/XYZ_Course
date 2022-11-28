@@ -10,12 +10,12 @@ public class DectroyObject : MonoBehaviour
     private static readonly int pickUpPotion = Animator.StringToHash("pickUp");
     public void DestroyObject()
     {
-        Destroy(_objToDestroy, 0.3f);
+        Destroy(_objToDestroy, 0.2f);
         _animator.SetTrigger(pickUpKey);
     }
     public void DestroyPotion()
     {
-        Destroy(_objToDestroy, 0.7f);
+        Destroy(_objToDestroy, 0.5f);
         _animator.SetTrigger(pickUpPotion);
     }
 

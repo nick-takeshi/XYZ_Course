@@ -7,7 +7,9 @@ public class DefsFacade : ScriptableObject
 {
     [SerializeField] private InventoryItemsDefinition _items;
     [SerializeField] private PlayerDef _player;
+    [SerializeField] private ThrowableItemsDef _throwableItems;
     public InventoryItemsDefinition Items => _items;
+    public ThrowableItemsDef Throwable => _throwableItems;
     public PlayerDef Player => _player;
 
     private static DefsFacade _instance;

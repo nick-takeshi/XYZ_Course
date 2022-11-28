@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: -6711293528313106208}
   - component: {fileID: -4903370854617511059}
   - component: {fileID: 7220243083329307977}
+  - component: {fileID: -8533601247454378332}
   m_Layer: 0
-  m_Name: PearlProjectile
+  m_Name: Hero-PearlProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0880a62a7836da547bf1a7264a1d687f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 7
 --- !u!114 &-6711293528313106208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69568a447fa002a42bd7ff77d93406bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Player
+  _tag: enemy
   _layer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -209,5 +210,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108ebc3970578b446a59179da3316156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
+  _damage: 5
   _healing: 0
+--- !u!114 &-8533601247454378332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989396264825474856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69568a447fa002a42bd7ff77d93406bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4903370854617511059}
+        m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
+        m_MethodName: DestroyParticle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -5,7 +5,6 @@ using UnityEditor.Animations;
 
 public class Hero : Creature
 {
-    [SerializeField] private Collider2D[] _interactionResult = new Collider2D[1];
     [SerializeField] private ParticleSystem _particle;
 
     [SerializeField] private LayerMask _interactionLayer;
@@ -15,20 +14,34 @@ public class Hero : Creature
     [SerializeField] private AnimatorController _disarmed;
     [SerializeField] private Cooldown _throwCooldown;
     [SerializeField] private Cooldown _meleeCooldown;
+    [SerializeField] private SpawnComponent _throwSpawner;
 
     [SerializeField] private CheckCircleOverlap _interactionCheck;
+    [SerializeField] private SpawnComponent _timer;
     private bool _allowDoubleJump;
     private bool _getDoubleJump;
     private bool _isDodge;
     private Rigidbody2D rigid;
     private CapsuleCollider2D coll;
+    private const string SwordId = "Sword";
 
 
     public GameSession _session;
 
     private int CoinCount => _session.Data.Inventory.Count("Coin");
-    private int SwordCount => _session.Data.Inventory.Count("Sword");
-
+    private int SwordCount => _session.Data.Inventory.Count(SwordId);
+    private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+    private bool CanThrow
+    {
+        get
+        {
+            if (SelectedItemId == SwordId) 
+                return SwordCount > 1;
+            
+            var def = DefsFacade.I.Items.Get(SelectedItemId);
+            return def.HasTag(ItemTag.Throwable);
+        }
+    }
 
 
     protected override void Awake()
@@ -48,7 +61,7 @@ public class Hero : Creature
 
     private void OnInventoryChanged(string id, int value)
     {
-        if (id == "Sword") UpdateHeroWeapon();
+        if (id == SwordId) UpdateHeroWeapon();
         
     }
 
@@ -160,19 +173,26 @@ public class Hero : Creature
     }
     public void OnDoThrow()
     {
-        _particles.Spawn("Throw");
+        //_particles.Spawn("Throw");
+        var throwableId = _session.QuickInventory.SelectedItem.Id;
+        var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+        _throwSpawner.SetPrefab(throwableDef.Projectile);
+
+        _throwSpawner.Spawn();
+        _session.Data.Inventory.Remove(throwableId, 1);
     }
 
     public void Throw()
     {
-        if (_throwCooldown.IsReady & _session.Data.Inventory.Count("Sword") > 1)
+        if (_throwCooldown.IsReady & CanThrow)
         {
-            _session.Data.Inventory.Remove("Sword", 1);
             _animator.SetTrigger("Throw");
             _throwCooldown.Reset();
             _sounds.Play("Range");
         }
     }
+
+   
 
     public void Dodge()
     {
@@ -182,20 +202,59 @@ public class Hero : Creature
 
     public void Heal()
     {
-        if (_session.Data.Inventory.Count("HealPotion") > 0)
+        if (_session.Data.Inventory.Count("HealPotion") > 0 & _session.Data.Inventory.Count("BigHealPotion") > 0)
         {
             _session.Data.Inventory.Remove("HealPotion", 1);
-
-            var healthComponent = GetComponent<HealthComponent>();
-            if (healthComponent != null)
-            {
-                healthComponent.HealHP(5);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += 5;
-                _sounds.Play("Heal");
-            }
+            Healing(5);
         }
-        
-        
+        else if (_session.Data.Inventory.Count("HealPotion") > 0 & _session.Data.Inventory.Count("BigHealPotion") == 0)
+        {
+            _session.Data.Inventory.Remove("HealPotion", 1);
+            Healing(5);
+        }
+        else if (_session.Data.Inventory.Count("HealPotion") == 0 & _session.Data.Inventory.Count("BigHealPotion") == 0)
+        {
+            return;
+        }
+        else if (_session.Data.Inventory.Count("HealPotion") == 0 & _session.Data.Inventory.Count("BigHealPotion") > 0)
+        {
+            _session.Data.Inventory.Remove("BigHealPotion", 1);
+            Healing(8);
+        }
+
     }
 
+    public void Healing(int value)
+    {
+        var healthComponent = GetComponent<HealthComponent>();
+        if (healthComponent != null)
+        {
+            healthComponent.HealHP(value);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += value;
+            _sounds.Play("Heal");
+        }
+    }
+
+    public void NextItem()
+    {
+        _session.QuickInventory.SetNextItem();
+    }
+
+    public void GetFast()
+    {
+        if (_session.Data.Inventory.Count("SpeedPotion") > 0)
+        {
+            _session.Data.Inventory.Remove("SpeedPotion", 1);
+
+            speed += 2;
+            Invoke("DecreaseSpeed", 5);
+            _timer.SpawnTimer();
+
+        }
+    }
+
+    public void DecreaseSpeed()
+    {
+        speed -= 2;
+    }
 }

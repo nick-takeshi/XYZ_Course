@@ -5373,8 +5373,6 @@ MonoBehaviour:
   _JumpParticles: {fileID: 4162395562221752684}
   _groundCheck: {fileID: 4405397125770155408}
   radius: 1
-  _interactionResult:
-  - {fileID: 0}
   _particle: {fileID: 4162395560588544934}
   _interactionLayer:
     serializedVersion: 2
@@ -5385,6 +5383,7 @@ MonoBehaviour:
     _value: 1
   _meleeCooldown:
     _value: 0.7
+  _throwSpawner: {fileID: 7845544811437316}
   _interactionCheck: {fileID: 7364890857610966532}
   _session: {fileID: 0}
 --- !u!114 &4162395562633549154
@@ -5521,6 +5520,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3014fa8b-f872-4d5b-9838-3c5efd544aaa
     m_ActionName: Hero/heal[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4162395562633549154}
+        m_TargetAssemblyTypeName: InputDirection, Assembly-CSharp
+        m_MethodName: OnNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c47197e3-fc95-48f8-90e7-cf162982aa1e
+    m_ActionName: Hero/nextItem[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4162395562633549154}
+        m_TargetAssemblyTypeName: InputDirection, Assembly-CSharp
+        m_MethodName: OnFast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 73fc09fb-b69e-418f-9ad1-8e6788ce407b
+    m_ActionName: Hero/fast[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5595,7 +5626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc02f9722455bc408850ad299971704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 10
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -5653,6 +5684,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1392716167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5674,6 +5708,8 @@ MonoBehaviour:
     _component: {fileID: 1076015778}
   - Id: Throw
     _component: {fileID: 7845544811437316}
+  - Id: Timer
+    _component: {fileID: 0}
 --- !u!114 &1392716176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5800,7 +5836,7 @@ GameObject:
   - component: {fileID: 9083919367234943171}
   - component: {fileID: 7845544811437316}
   m_Layer: 0
-  m_Name: ThrowSworSpawnPos
+  m_Name: ThrowSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
