@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - door
   - SfxAudioSource
+  - npc
   layers:
   - Default
   - TransparentFX

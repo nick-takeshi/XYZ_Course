@@ -44,4 +44,9 @@ public class QuickInventoryController : MonoBehaviour
             _createdItem[i].gameObject.SetActive(false);
         }
     }
+
+    private void OnDestroy()
+    {
+        _trash.Dispose();
+    }
 }

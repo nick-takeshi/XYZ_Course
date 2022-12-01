@@ -11,6 +11,8 @@ public class GameSession : MonoBehaviour
     private PlayerData _save;
     public QuickInventoryModel QuickInventory { get; private set; }
 
+    private readonly CompositeDisposable _trash = new CompositeDisposable();
+
     private void Awake()
     {
         LoadHUD();
@@ -30,6 +32,7 @@ public class GameSession : MonoBehaviour
     private void InitModels()
     {
         QuickInventory = new QuickInventoryModel(Data);
+        _trash.Retain(QuickInventory);
     }
 
     private void LoadHUD()
@@ -58,6 +61,11 @@ public class GameSession : MonoBehaviour
     public void LoadLastSave()
     {
         _data = _save.Clone();
+    }
+
+    private void OnDestroy()
+    {
+        _trash.Dispose();
     }
 
 }

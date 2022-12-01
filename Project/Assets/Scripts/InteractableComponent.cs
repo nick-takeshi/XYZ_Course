@@ -9,6 +9,7 @@ public class InteractableComponent : MonoBehaviour
 
     public void Interact()
     {
+
         _action?.Invoke();
     }
 }

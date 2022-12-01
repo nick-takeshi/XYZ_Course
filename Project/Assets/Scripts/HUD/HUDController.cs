@@ -13,6 +13,8 @@ public class HUDController : MonoBehaviour
         _session = FindObjectOfType<GameSession>();
         _session.Data.Hp.OnChanged += OnHealthChanged;
         OnHealthChanged(_session.Data.Hp.Value, 0);
+
+        
     }
 
     private void OnHealthChanged(int newValue, int oldValue)

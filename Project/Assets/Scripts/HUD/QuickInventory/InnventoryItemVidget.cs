@@ -9,12 +9,15 @@ public class InnventoryItemVidget : MonoBehaviour
     [SerializeField] private GameObject _selection;
     [SerializeField] private Text _value;
 
+    private readonly CompositeDisposable _trash = new CompositeDisposable();
+
     private int _index;
 
     private void Start()
     {
         var session = FindObjectOfType<GameSession>();
-        session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+        var index = session.QuickInventory.SelectedIndex;
+        _trash.Retain(index.SubscribeAndInvoke(OnIndexChanged));
     }
 
     private void OnIndexChanged(int newValue, int oldValue)
@@ -30,4 +33,8 @@ public class InnventoryItemVidget : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        _trash.Dispose();
+    }
 }

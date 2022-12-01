@@ -126,9 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f4174248d6060438c1b518bdf4a79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys:
-  - {fileID: 21300000, guid: 5a141086b08d5d349b30d1140d609cda, type: 3}
-  - {fileID: 0}
+  _keys: []
   _pointer: {fileID: 21300000, guid: ba29d328cbaba954c9d81494d499c017, type: 3}
 --- !u!114 &1102336354149861998
 MonoBehaviour:
@@ -204,6 +202,7 @@ GameObject:
   - component: {fileID: 1102336354343215523}
   - component: {fileID: 1102336354343215532}
   - component: {fileID: 1104228397298920869}
+  - component: {fileID: 1725815598}
   m_Layer: 6
   m_Name: HelmWithRequire
   m_TagString: helm
@@ -382,10 +381,10 @@ MonoBehaviour:
   _onFail:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1102336354149861995}
-        m_TargetAssemblyTypeName: ShowPointer, Assembly-CSharp
-        m_MethodName: RequireKey
-        m_Mode: 3
+      - m_Target: {fileID: 1725815598}
+        m_TargetAssemblyTypeName: ShowDialogComponent, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -433,7 +432,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 664b956fe3f66c44bab0dc13ca93b2ae, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.371
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -517,3 +516,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1725815598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8292818104730876410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13864e24a5bde234ca09550a1a9e1815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
+  _bound:
+    _sentences: []
+  _external: {fileID: 11400000, guid: 6c31f826803fb3845844a5151abbe219, type: 2}

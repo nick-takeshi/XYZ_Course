@@ -126,6 +126,7 @@ public class Hero : Creature
     public void Interact()
     {
         _interactionCheck.Check();
+
     }
     public void GetPower()
     {
