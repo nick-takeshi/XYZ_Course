@@ -373,13 +373,14 @@ GameObject:
   - component: {fileID: 54176104483711615}
   - component: {fileID: 8281964994070173029}
   - component: {fileID: 5386775524293145593}
+  - component: {fileID: 154342164}
   m_Layer: 8
   m_Name: GetPearles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &330499514842477001
 Transform:
   m_ObjectHideFlags: 0
@@ -452,6 +453,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 154342164}
+        m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
+        m_MethodName: DestroyParticle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1442998327}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: getPearles
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5386775524293145593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +491,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Pearl
   _count: 3
+--- !u!114 &154342164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498877659909922179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5757dcf3ae85777478dccb0e676585b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objToDestroy: {fileID: 3498877659909922179}
+  _animator: {fileID: 0}
 --- !u!1 &3999342324420967877
 GameObject:
   m_ObjectHideFlags: 0

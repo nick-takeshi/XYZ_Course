@@ -5700,7 +5700,7 @@ MonoBehaviour:
   speed: 1
   _jumpSpeed: 5
   _damgeVelocity: 1
-  _damage: 1
+  _damage: 2
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8

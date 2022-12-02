@@ -212,7 +212,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7141894895744229073}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyBarrel
+        m_MethodName: DestroyParticle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 8
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -269,7 +269,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7141894895744229073}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyBarrel
+        m_MethodName: DestroyParticle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
