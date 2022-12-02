@@ -193,28 +193,19 @@ public class Hero : Creature
         coll.size = new Vector2(0.7f, 0.25f);
         _animator.SetBool("isDodge", true);
     }
-    public void Heal()
+    public void Heal(string id)
     {
-        if (_session.Data.Inventory.Count("HealPotion") > 0 & _session.Data.Inventory.Count("BigHealPotion") > 0)
+        if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "BigHealPotion")
         {
-            _session.Data.Inventory.Remove("HealPotion", 1);
-            Healing(5);
-        }
-        else if (_session.Data.Inventory.Count("HealPotion") > 0 & _session.Data.Inventory.Count("BigHealPotion") == 0)
-        {
-            _session.Data.Inventory.Remove("HealPotion", 1);
-            Healing(5);
-        }
-        else if (_session.Data.Inventory.Count("HealPotion") == 0 & _session.Data.Inventory.Count("BigHealPotion") == 0)
-        {
-            return;
-        }
-        else if (_session.Data.Inventory.Count("HealPotion") == 0 & _session.Data.Inventory.Count("BigHealPotion") > 0)
-        {
-            _session.Data.Inventory.Remove("BigHealPotion", 1);
+            _session.Data.Inventory.Remove(id, 1);
             Healing(8);
         }
-
+        else if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "HealPotion")
+        {
+            _session.Data.Inventory.Remove(id, 1);
+            Healing(5);
+        }
+        else return;
     }
     public void Healing(int value)
     {
@@ -234,9 +225,13 @@ public class Hero : Creature
     {
         var usableId = _session.QuickInventory.SelectedItem.Id;
 
-        if (usableId == "BigHealPotion" | usableId == "HealPotion")
+        if (usableId == "BigHealPotion")
         {
-            Heal();
+            Heal(usableId);
+        }
+        else if (usableId == "HealPotion")
+        {
+            Heal(usableId);
         }
         else if(usableId == "SpeedPotion")
         {
