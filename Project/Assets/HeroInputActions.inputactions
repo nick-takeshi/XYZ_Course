@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "heal",
+                    "name": "useItem",
                     "type": "Button",
                     "id": "3014fa8b-f872-4d5b-9838-3c5efd544aaa",
                     "expectedControlType": "Button",
@@ -63,15 +63,6 @@
                     "name": "nextItem",
                     "type": "Button",
                     "id": "c47197e3-fc95-48f8-90e7-cf162982aa1e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "fast",
-                    "type": "Button",
-                    "id": "73fc09fb-b69e-418f-9ad1-8e6788ce407b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -170,11 +161,11 @@
                 {
                     "name": "",
                     "id": "0da1ce85-0737-426b-b478-642bca9fd2ba",
-                    "path": "<Keyboard>/h",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "heal",
+                    "action": "useItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -186,17 +177,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "nextItem",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1ade3c12-ca3b-42a6-9272-bd104f62f66f",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "fast",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

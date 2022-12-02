@@ -149,8 +149,6 @@ public class Hero : Creature
     {
         _particles.Spawn("Attack");
     }
-
-    
     public override void Attack()
     {
         if (SwordCount <= 0) return;
@@ -167,7 +165,6 @@ public class Hero : Creature
         _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
         Debug.Log(_animator.runtimeAnimatorController);
     }
-
     public void OnHealthChanged(int currentHealth)
     {
         _session.Data.Hp.Value = currentHealth;
@@ -182,7 +179,6 @@ public class Hero : Creature
         _throwSpawner.Spawn();
         _session.Data.Inventory.Remove(throwableId, 1);
     }
-
     public void Throw()
     {
         if (_throwCooldown.IsReady & CanThrow)
@@ -192,15 +188,11 @@ public class Hero : Creature
             _sounds.Play("Range");
         }
     }
-
-   
-
     public void Dodge()
     {
         coll.size = new Vector2(0.7f, 0.25f);
         _animator.SetBool("isDodge", true);
     }
-
     public void Heal()
     {
         if (_session.Data.Inventory.Count("HealPotion") > 0 & _session.Data.Inventory.Count("BigHealPotion") > 0)
@@ -224,7 +216,6 @@ public class Hero : Creature
         }
 
     }
-
     public void Healing(int value)
     {
         var healthComponent = GetComponent<HealthComponent>();
@@ -235,13 +226,24 @@ public class Hero : Creature
             _sounds.Play("Heal");
         }
     }
-
     public void NextItem()
     {
         _session.QuickInventory.SetNextItem();
     }
+    public void OnUsePotion()
+    {
+        var usableId = _session.QuickInventory.SelectedItem.Id;
 
-    public void GetFast()
+        if (usableId == "BigHealPotion" | usableId == "HealPotion")
+        {
+            Heal();
+        }
+        else if(usableId == "SpeedPotion")
+        {
+            IncreaseSpeed();
+        }
+    }
+    public void IncreaseSpeed()
     {
         if (_session.Data.Inventory.Count("SpeedPotion") > 0)
         {
@@ -253,7 +255,6 @@ public class Hero : Creature
 
         }
     }
-
     public void DecreaseSpeed()
     {
         speed -= 2;

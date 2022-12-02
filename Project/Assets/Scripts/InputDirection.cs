@@ -47,12 +47,12 @@ public class InputDirection : MonoBehaviour
         }
     }
 
-    public void OnHeal(InputAction.CallbackContext context)
+    public void OnUseItem(InputAction.CallbackContext context)
     {
 
         if (context.performed)
         {
-            _hero.Heal();
+            _hero.OnUsePotion();
         }
 
 
@@ -66,13 +66,7 @@ public class InputDirection : MonoBehaviour
         }
     }
 
-    public void OnFast(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            _hero.GetFast();
-        }
-    }
+   
 }
    
     

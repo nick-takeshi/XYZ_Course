@@ -32,7 +32,10 @@ public class GameMenuWindow : AnimatedWindow
     public void OnRestart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        var _session = FindObjectOfType<GameSession>();
+        Destroy(_session);
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
 
     }
 

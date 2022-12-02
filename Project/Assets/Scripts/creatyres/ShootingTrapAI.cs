@@ -16,10 +16,14 @@ public class ShootingTrapAI : MonoBehaviour
     [SerializeField] private SpawnComponent _rangeAttack;
 
     private Animator _animator;
+    private GameObject _getPearl;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _getPearl = GameObject.Find("GetPearles");
+        _getPearl.SetActive(false);
+
     }
     private void Update()
     {
@@ -65,6 +69,8 @@ public class ShootingTrapAI : MonoBehaviour
     public void OnDie()
     {
         gameObject.layer = 7;
+        _getPearl.SetActive(true);
+        _getPearl.layer = 0;
 
         var script = FindObjectOfType<ShootingTrapAI>();
         Destroy(script);

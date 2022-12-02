@@ -5385,6 +5385,7 @@ MonoBehaviour:
     _value: 0.7
   _throwSpawner: {fileID: 7845544811437316}
   _interactionCheck: {fileID: 7364890857610966532}
+  _timer: {fileID: 0}
   _session: {fileID: 0}
 --- !u!114 &4162395562633549154
 MonoBehaviour:
@@ -5508,7 +5509,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4162395562633549154}
         m_TargetAssemblyTypeName: InputDirection, Assembly-CSharp
-        m_MethodName: OnHeal
+        m_MethodName: OnUseItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5536,22 +5537,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c47197e3-fc95-48f8-90e7-cf162982aa1e
     m_ActionName: Hero/nextItem[/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4162395562633549154}
-        m_TargetAssemblyTypeName: InputDirection, Assembly-CSharp
-        m_MethodName: OnFast
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 73fc09fb-b69e-418f-9ad1-8e6788ce407b
-    m_ActionName: Hero/fast[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5708,8 +5693,6 @@ MonoBehaviour:
     _component: {fileID: 1076015778}
   - Id: Throw
     _component: {fileID: 7845544811437316}
-  - Id: Timer
-    _component: {fileID: 0}
 --- !u!114 &1392716176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,6 +5796,7 @@ MonoBehaviour:
   _tags:
   - helm
   - door
+  - npc
 --- !u!114 &9068461632544216348
 MonoBehaviour:
   m_ObjectHideFlags: 0
