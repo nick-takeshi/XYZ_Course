@@ -25241,13 +25241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13864e24a5bde234ca09550a1a9e1815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 1
+  _mode: 0
   _bound:
     _sentences:
-    - _valued: 
-      _icon: {fileID: 0}
-      _side: 0
-    - _valued: 
+    - _valued: Goodbye
       _icon: {fileID: 0}
       _side: 0
     _type: 0
@@ -25459,9 +25456,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1201933190}
     m_Modifications:
     - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
       propertyPath: _external
       value: 
       objectReference: {fileID: 11400000, guid: 3f273d332fef25f41b1d8d053bf93b4c, type: 2}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _bound._sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _bound._sentences.Array.data[0]._valued
+      value: You need the Yellow key...
+      objectReference: {fileID: 0}
     - target: {fileID: 1102336354149861995, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
       propertyPath: _keys.Array.data[0]
       value: 
@@ -27898,16 +27907,16 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - _valued: gbfbdvx
+    - _valued: Hello, buddy, help my brother get revenge
       _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
       _side: 1
-    - _valued: fghfgbfgb
+    - _valued: I've gave you the speed potion
       _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
       _side: 1
-    - _valued: dfdfgfg
+    - _valued: cool
       _icon: {fileID: 21300000, guid: c8db42b185e421048bfef0457a98e0d3, type: 3}
       _side: 0
-    - _valued: dfghgdb
+    - _valued: Use Q to select it and F to use
       _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
       _side: 1
     _type: 1

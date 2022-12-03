@@ -8533,7 +8533,10 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - You need the key...
+    - _valued: You need key...
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _external: {fileID: 0}
 --- !u!114 &2084866364
 MonoBehaviour:

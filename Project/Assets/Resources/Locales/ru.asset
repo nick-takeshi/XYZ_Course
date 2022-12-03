@@ -40,4 +40,4 @@ MonoBehaviour:
   - Key: button_restart
     Value: "\u0440\u0435\u0441\u0442\u0430\u0440\u0442\r"
   - Key: button_mainmenu
-    Value: "\u0433\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
+    Value: "\u043C\u0435\u043D\u044E"
