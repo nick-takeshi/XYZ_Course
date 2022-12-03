@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueBoxController : MonoBehaviour
 {
-    [SerializeField] private Text _text;
+    [SerializeField] protected DialogContent _content;
     [SerializeField] private GameObject _container;
     [SerializeField] private Animator _animator;
 
@@ -21,33 +21,38 @@ public class DialogueBoxController : MonoBehaviour
     private AudioSource _sfxSource;
     private Coroutine _typingRoutine;
 
+    protected Sentence CurrentSentence => _data.Sentences[_currentSentence];
+
+
     private void Start()
     {
         _sfxSource = AudioUtils.FindSfxSource();
     }
+
+    protected virtual DialogContent CurrentContent => _content;
     public void ShowDialog(DialogData data)
     {
         _data = data;
         _currentSentence = 0;
-        _text.text = string.Empty;
+        CurrentContent.Text.text = string.Empty;
 
         _container.SetActive(true);
         _sfxSource.PlayOneShot(_open);
         _animator.SetBool("isOpen", true);   
 
     }
-    private void OnStartDialogAnimaton()
+    protected virtual void OnStartDialogAnimaton()
     {
         _typingRoutine = StartCoroutine(TypeDialogText());
     }
     private IEnumerator TypeDialogText()
     {
-        _text.text = string.Empty;
+        CurrentContent.Text.text = string.Empty;
         var sentence = _data.Sentences[_currentSentence];
 
-        foreach (var letter in sentence)
+        foreach (var letter in sentence.Valued)
         {
-            _text.text += letter;
+            CurrentContent.Text.text += letter;
             _sfxSource?.PlayOneShot(_typing);
             yield return new WaitForSeconds(_textSpeed);
         }
@@ -59,7 +64,7 @@ public class DialogueBoxController : MonoBehaviour
     {
         if (_typingRoutine == null) return;
         StopTypeAnimation();
-        _text.text = _data.Sentences[_currentSentence];
+        CurrentContent.Text.text = _data.Sentences[_currentSentence].Valued;
     }
 
     public void OnContinue()

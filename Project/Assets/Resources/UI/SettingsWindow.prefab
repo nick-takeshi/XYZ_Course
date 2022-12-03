@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 28421835}
   - component: {fileID: 28421837}
   - component: {fileID: 28421836}
+  - component: {fileID: 3910975249193247245}
   m_Layer: 5
   m_Name: Header (1)
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sounds
+--- !u!114 &3910975249193247245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28421834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb797bd5d9968a43970b7ced2cfb00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_sounds
+  _capitalize: 0
 --- !u!1 &90973807
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +718,7 @@ GameObject:
   - component: {fileID: 6466782591710709584}
   - component: {fileID: 4866872901118702063}
   - component: {fileID: 770580642565407555}
+  - component: {fileID: 4740091893192293623}
   m_Layer: 5
   m_Name: Header (1)
   m_TagString: Untagged
@@ -772,6 +788,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Music
+--- !u!114 &4740091893192293623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373404749176744698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb797bd5d9968a43970b7ced2cfb00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_music
+  _capitalize: 0
 --- !u!1 &415703294569609933
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +813,7 @@ GameObject:
   - component: {fileID: 780544224164408075}
   - component: {fileID: 4563558419413307521}
   - component: {fileID: 490500318814809489}
+  - component: {fileID: 8692515178443037426}
   m_Layer: 5
   m_Name: normalText
   m_TagString: Untagged
@@ -852,6 +883,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: APPLY
+--- !u!114 &8692515178443037426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415703294569609933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb797bd5d9968a43970b7ced2cfb00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &668055423163285490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1279,7 @@ GameObject:
   - component: {fileID: 7854223967983161266}
   - component: {fileID: 1303393913765454854}
   - component: {fileID: 8282287359544285899}
+  - component: {fileID: 5423634698779600613}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -1303,6 +1349,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Options
+--- !u!114 &5423634698779600613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346388469620021997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb797bd5d9968a43970b7ced2cfb00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_options
+  _capitalize: 1
 --- !u!1 &7372360859840691444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1374,7 @@ GameObject:
   - component: {fileID: 5488539147205069303}
   - component: {fileID: 4986706961685870657}
   - component: {fileID: 1104630174602930982}
+  - component: {fileID: 1772957797498046657}
   m_Layer: 5
   m_Name: pressedText
   m_TagString: Untagged
@@ -1383,6 +1444,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: APPLY
+--- !u!114 &1772957797498046657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372360859840691444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb797bd5d9968a43970b7ced2cfb00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &8415090513882076539
 GameObject:
   m_ObjectHideFlags: 0

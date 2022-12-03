@@ -25244,8 +25244,13 @@ MonoBehaviour:
   _mode: 1
   _bound:
     _sentences:
-    - it's the end
-    - gudbai
+    - _valued: 
+      _icon: {fileID: 0}
+      _side: 0
+    - _valued: 
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _external: {fileID: 11400000, guid: 47914d5b178673340b65254e76c905a6, type: 2}
 --- !u!1001 &951551305
 PrefabInstance:
@@ -27893,11 +27898,20 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - Hello, traveler
-    - Help to revenge my brother
-    - I've gave you speed potion
-    - Select with Q and press F to use it
-  _external: {fileID: 0}
+    - _valued: gbfbdvx
+      _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
+      _side: 1
+    - _valued: fghfgbfgb
+      _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
+      _side: 1
+    - _valued: dfdfgfg
+      _icon: {fileID: 21300000, guid: c8db42b185e421048bfef0457a98e0d3, type: 3}
+      _side: 0
+    - _valued: dfghgdb
+      _icon: {fileID: 21300000, guid: 83db0d9a62b9a3646a538fb4e2a9222f, type: 3}
+      _side: 1
+    _type: 1
+  _external: {fileID: 11400000, guid: b05f3b4b063740442ac2075ccc078054, type: 2}
 --- !u!114 &1816786877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28830,6 +28844,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1201933190}
     m_Modifications:
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _external
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _bound._sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725815598, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
+      propertyPath: _bound._sentences.Array.data[0]._valued
+      value: You need the red key...
+      objectReference: {fileID: 0}
     - target: {fileID: 1102336354343215523, guid: 99bc1119b8b1e1d4fa308db74e7d52c8, type: 3}
       propertyPath: _onSuccess.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

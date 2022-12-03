@@ -11,12 +11,30 @@ public class ShowDialogComponent : MonoBehaviour
     private DialogueBoxController _dialogBox;
     public void Show()
     {
-        if (_dialogBox == null)
-            _dialogBox = FindObjectOfType<DialogueBoxController>();
+        _dialogBox = FindDialogController();
 
         _dialogBox.ShowDialog(Data);
     }
+    private DialogueBoxController FindDialogController()
+    {
+        if (_dialogBox != null) return _dialogBox;
 
+        GameObject controllerGo;
+
+        switch (Data.Type)
+        {
+            case DialogType.Simple:
+                controllerGo = GameObject.FindWithTag("SimpleDialog");
+                break;
+            case DialogType.Personalized:
+                controllerGo = GameObject.FindWithTag("PersonalizedDialog");
+                break;
+            default:
+                throw new ArgumentException("Undefined dialog type");
+        }
+
+        return controllerGo.GetComponent<DialogueBoxController>();
+    }
     public void Show(DialogDef def)
     {
         _external = def;

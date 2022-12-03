@@ -705,6 +705,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1773874417}
     m_Modifications:
+    - target: {fileID: 7227432425960615085, guid: 15db78a484023e741802ef177d433703, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227432425960615085, guid: 15db78a484023e741802ef177d433703, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227432425960615085, guid: 15db78a484023e741802ef177d433703, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227432425960615085, guid: 15db78a484023e741802ef177d433703, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8350499603852226343, guid: 15db78a484023e741802ef177d433703, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -725,6 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuWindow
       objectReference: {fileID: 0}
+    - target: {fileID: 8350499604215858581, guid: 15db78a484023e741802ef177d433703, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8350499604215858582, guid: 15db78a484023e741802ef177d433703, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -735,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8350499604215858582, guid: 15db78a484023e741802ef177d433703, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8350499604215858582, guid: 15db78a484023e741802ef177d433703, type: 3}
       propertyPath: m_AnchorMax.x

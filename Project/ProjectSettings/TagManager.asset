@@ -10,6 +10,8 @@ TagManager:
   - door
   - SfxAudioSource
   - npc
+  - SimpleDialog
+  - PersonalizedDialog
   layers:
   - Default
   - TransparentFX
